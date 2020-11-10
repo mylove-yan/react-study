@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import PropTypes from 'prop-types';
 
 export default class TodoItem extends Component {
 
@@ -7,14 +8,18 @@ export default class TodoItem extends Component {
     }
 
     render() {
+        const {content} = this.props;
         return (
-            <li onClick={this.handleClick}> {this.props.content}</li>
+
+            <li onClick={this.handleClick}> {content}</li>
         )
     }
 
     handleClick = () => {
-        this.props.deleteItem(this.props.index);
+        const {deleteItem,index} = this.props;
+        deleteItem(index);
     }
-
-
+}
+TodoItem.propTypes = {
+    content:PropTypes.string
 }

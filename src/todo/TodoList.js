@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import TodoItem from "./TodoItem";
 
+
 class TodoList extends Component {
 
     constructor(props) {
@@ -22,12 +23,7 @@ class TodoList extends Component {
                     </button>
                 </div>
                 <ul>
-                    {this.state.list.map((value, index)=>{
-                        // return <li key={index} onClick={this.handleDelete}>{value}</li>
-                        return(
-                            <TodoItem content={value} index={index} deleteItem={this.handleDelete}/>
-                        )
-                    })}
+                    {this.getTodoItem()}
                 </ul>
             </Fragment>
         );
@@ -52,6 +48,18 @@ class TodoList extends Component {
             list
         });
     }
+
+    getTodoItem = ()=>{
+        return this.state.list.map((value, index)=>{
+            // return <li key={index} onClick={this.handleDelete}>{value}</li>
+            return(
+                <TodoItem content={value} index={index} deleteItem={this.handleDelete}/>
+            )
+        })
+    }
+
 }
+
+
 
 export default TodoList;
