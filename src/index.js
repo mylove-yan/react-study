@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import TodoList from './todo/TodoList'
+import TodoList from './todoAntd/TodoList'
 
 ReactDOM.render(
   <React.StrictMode>
