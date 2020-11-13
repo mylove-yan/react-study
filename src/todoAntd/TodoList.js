@@ -3,7 +3,6 @@ import 'antd/dist/antd.css'
 import {Input,Button,List} from 'antd'
 import store from './store'
 import * as actionCreators from './store/actionCreators'
-import axios from 'axios'
 
 class TodoList extends Component{
     constructor(props) {
@@ -29,12 +28,14 @@ class TodoList extends Component{
                     style={{width:'500px'}}
                     bordered
                     dataSource={this.state.list}
-                    renderItem = {item =>(
-                        <List.Item>{item}</List.Item>
+                    renderItem = {(item,index) =>(
+                        <List.Item
+                            onClick={(index)=> {this.listItemDelete(index)}}
+                            key={index}>
+                            {item}
+                        </List.Item>
                     )}
                 />
-
-
             </div>
         );
     }
@@ -51,6 +52,11 @@ class TodoList extends Component{
     }
     handleBtnClick = () => {
         const  action = actionCreators.handleBtnClick();
+        store.dispatch(action);
+    }
+
+    listItemDelete = (index)=>{
+        const  action = actionCreators.listItemDelete(index);
         store.dispatch(action);
     }
 

@@ -5,3 +5,7 @@ Redux store 仅支持同步数据流。使用 thunk 等中间件可以帮助在 
 链接：https://www.jianshu.com/p/51c8eaa9fa2a
 来源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+如何理解redux-thunk 
+https://zhuanlan.zhihu.com/p/85403048

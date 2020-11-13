@@ -12,6 +12,11 @@ export const handleBtnClick = ()=>{
     return {type:actionTypes.HANDLE_BTN_CLICK}
 }
 
+export const listItemDelete = (index)=>{
+    return {type:actionTypes.LIST_ITEM_DELETE,index}
+}
+
+
 export const initListAction = (value)=>{
     return {
         type:actionTypes.INIT_LIST_DATA,

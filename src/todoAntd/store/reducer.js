@@ -17,6 +17,13 @@ export default (state = defaultState,action )=>{
         return newState;
     }
 
+    if(action.type === actionTypes.LIST_ITEM_DELETE){
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.list.splice(action.index,1);
+        return newState;
+    }
+
+
     if(action.type === actionTypes.INIT_LIST_DATA){
         const newState = JSON.parse(JSON.stringify(state));
         newState.list = action.value;
