@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import {CSSTransition} from 'react-transition-group';
 import {actionCreators} from './store';
-import {actionCreators as loginActionCreators} from '../../pages/login/store'
 
 import {
     HeaderWrapper,
@@ -30,10 +30,14 @@ class Header extends Component {
                 <Nav>
                     <NavItem className='left active'>首页</NavItem>
                     <NavItem className='left'>下载App</NavItem>
+                    {
+                        login ?
+                            <NavItem onClick={logout} className='right'>退出</NavItem> :
+                            <Link to='/login'><NavItem className='right'>登陆</NavItem></Link>
+                    }
                     <NavItem className='right'>
                         <i className="iconfont">&#xe636;</i>
                     </NavItem>
-                    <NavItem className='left'>登陆</NavItem>
                     <SearchWrapper>
                         <CSSTransition
                             in={focused}
@@ -41,17 +45,26 @@ class Header extends Component {
                             classNames="slide"
                         >
                             <NavSearch
-                                className={focused ? 'focused' : ''}
+                                className={focused ? 'focused': ''}
                                 onFocus={() => handleInputFocus(list)}
                                 onBlur={handleInputBlur}
                             ></NavSearch>
                         </CSSTransition>
-                        <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>
+                        <i className={focused ? 'focused iconfont zoom': 'iconfont zoom'}>
                             &#xe614;
                         </i>
                         {this.getListArea()}
                     </SearchWrapper>
                 </Nav>
+                <Addition>
+                    <Link to='/write'>
+                        <Button className='writting'>
+                            <i className="iconfont">&#xe615;</i>
+                            写文章
+                        </Button>
+                    </Link>
+                    <Button className='reg'>注册</Button>
+                </Addition>
             </HeaderWrapper>
         )
     }
@@ -136,7 +149,7 @@ const mapDispathToProps = (dispatch) =>{
             }
         },
         logout() {
-            dispatch(loginActionCreators.logout())
+            //dispatch(loginActionCreators.logout())
         }
     }
 }

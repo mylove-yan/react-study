@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+const FontStyle = createGlobalStyle`
   @font-face {
     font-family: "iconfont";
     src: url('./iconfont.eot?t=1528610804703'); /* IE9*/
@@ -18,7 +18,7 @@ injectGlobal`
     -moz-osx-font-smoothing: grayscale;
   }
 `;
-
+export default FontStyle
 
 
 
