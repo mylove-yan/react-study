@@ -20,4 +20,9 @@ const mapState = (state) => ({
 	list: state.getIn(['home', 'recommendList'])
 })
 
-export default connect(mapState, null)(Recommend);
+const mapDispatch = (dispatch)=>({
+
+})
+
+
+export default connect(mapState, mapDispatch)(Recommend);
