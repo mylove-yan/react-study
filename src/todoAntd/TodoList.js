@@ -10,6 +10,7 @@ class TodoList extends Component{
         this.state = store.getState();
         store.subscribe(this.handleStoreChange);
     }
+    
 
 
     render() {
