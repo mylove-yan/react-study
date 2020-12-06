@@ -166,14 +166,14 @@ function App(props) {
                     <span className="right"></span>
                 </Detail>
             </div>
-            {/*<TrainContext.Provider value={*/}
-            {/*    trainNumber,*/}
-            {/*    departStation,*/}
-            {/*    arriveStation,*/}
-            {/*    departDate,*/}
-            {/*}>*/}
-            {/*    <Candidate tickets={tickets}/>*/}
-            {/*</TrainContext.Provider>*/}
+            <TrainContext.Provider  className="detail-wrapper" value={{
+                trainNumber,
+                departStation,
+                arriveStation,
+                departDate
+            }}>
+                <Candidate tickets={tickets}/>
+            </TrainContext.Provider>
             { isScheduleVisible &&
             <div className="mask" onClick={() => dispatch(toggleIsScheduleVisible())}>
                 <Suspense fallback={<div>loading</div>}>
