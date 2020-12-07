@@ -17,6 +17,14 @@
     top: 88px;
 }
 
+.candidate-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0px;
+    top: 220px;
+}
+
+
 .mask {
     position: fixed;
     z-index: 1000;

@@ -97,7 +97,7 @@ Seat.propTypes = {
     type: PropTypes.string.isRequired,
     priceMsg: PropTypes.string.isRequired,
     ticketsLeft: PropTypes.string.isRequired,
-    cheannels: PropTypes.array.isRequired,
+    // cheannels: PropTypes.array.isRequired,
     expanded: PropTypes.bool.isRequired,
     onToggle: PropTypes.func.isRequired,
     idx: PropTypes.number.isRequired,

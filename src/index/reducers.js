@@ -18,7 +18,7 @@ export default {
                 return payload;
             default:
         }
-
+        console.log("222");
         return state;
     },
     to(state = '上海', action) {

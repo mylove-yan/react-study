@@ -166,13 +166,15 @@ function App(props) {
                     <span className="right"></span>
                 </Detail>
             </div>
-            <TrainContext.Provider  className="detail-wrapper" value={{
+            <TrainContext.Provider  value={{
                 trainNumber,
                 departStation,
                 arriveStation,
                 departDate
             }}>
-                <Candidate tickets={tickets}/>
+                <div className="candidate-wrapper">
+                    <Candidate tickets={tickets}/>
+                </div>
             </TrainContext.Provider>
             { isScheduleVisible &&
             <div className="mask" onClick={() => dispatch(toggleIsScheduleVisible())}>
