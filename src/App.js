@@ -8,7 +8,6 @@ import store from './store';
 import GlobalStyle from './style.js';
 import FontStyle from './statics/iconfont/iconfont';
 
-
 class App extends Component {
     render() {
         return (
@@ -18,7 +17,7 @@ class App extends Component {
                     <Route path='/' exact component={Home}></Route>
                     <Route path='/styled'  component={Style}></Route>
                     <GlobalStyle/>
-                    <FontStyle/>/**/
+                   // <FontStyle/>
                 </BrowserRouter>
             </Provider>
         );
