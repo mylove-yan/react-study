@@ -18,7 +18,7 @@ class App extends Component {
                     <Route path='/' exact component={Home}></Route>
                     <Route path='/styled'  component={Style}></Route>
                     <GlobalStyle/>
-                    <FontStyle/>
+                    <FontStyle/>/**/
                 </BrowserRouter>
             </Provider>
         );
